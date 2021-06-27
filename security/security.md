@@ -80,7 +80,7 @@ MIDDLEWARE = [
     'Django.middleware.security.SecurityMiddleware' #new
 ]
 ```
-and in **base.py** give True for this variable:
+and in **base.py** give True for this variable for redirect all request to https:
 ```
 # settings/base.py
 SECURE_SSL_REDIRECT=True
@@ -98,4 +98,36 @@ CSRF_COOKIE_SECURE = True
 # to avoid transmitting the session cookie over HTTP accidentally.
 SESSION_COOKIE_SECURE = True
 ```
-6. prevent Cross-site Scripting(XSS) attacks 
+6. prevent Cross-site Scripting(XSS) attacks:
+**xss attack** send a script code to the site or application, when user visits site,
+run script in user browser and attacker can to steal important information
+for prevent **xss attack**:
+```
+# settings/base.py
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # security
+    'django.middleware.security.SecuranceMiddleware' # new
+]
+
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+``` 
+7. Enable HTTP Strict Transport Security(HSTS), 
+it stops ssl protocol attacks and steals cookies:
+```
+SECURE_HSTS_SECONDS = 86400  # 1 day
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+```
+if there is an attack on the site, browsers restrict access to the site
+for the period we specify
+
+8. 
