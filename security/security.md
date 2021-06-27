@@ -146,4 +146,23 @@ Add admin_honeypot to INSTALLED_APPS
 url(r'^admin/', include('admin_honeypot.urls')),
 url(r'^secret/', include(admin.site.urls)),
 ```
-10. 
+10. check file upload by user
+11. dont use `exclude` and `field='__all__` in serializers.py
+12. use Two-step login 
+13. Force the user to enter a strong password
+14. prevent to throttling attack:
+```
+# settings/base.py
+
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '100/day',
+        'user': '1000/day'
+    }
+}
+``` 
+without attacker can request Millions of times to database and Damage and disable database 
