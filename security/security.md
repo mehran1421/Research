@@ -64,4 +64,38 @@ t to 'DENY'. The default is 'SAMEORIGIN', but unless there is a good reason for 
 ou should change it to 'DENY'.
 ?: (security.W020) ALLOWED_HOSTS must not be empty in deployment.
 ```
-4. 
+4. add ssl protocol to web server and convert http to https.
+you must add `Django.middleware.security.SecurityMiddleware` in MIDDLEWARE variable to base.py file:
+```
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    # security 
+    'Django.middleware.security.SecurityMiddleware' #new
+]
+```
+and in **base.py** give True for this variable:
+```
+# settings/base.py
+SECURE_SSL_REDIRECT=True
+```
+5. after doing number 4 and convert http --> https,
+to take care sit requests fake(csrf attack),
+**csrf attack** causes an unwanted task or action to be imposed 
+on the user. for example, can steals her information with send email to user.
+must write following code in **settings/base.py** for prevent accidental transfer of cookies and sessions:
+```
+# settings/base.py
+# to avoid transmitting the CSRF cookie over HTTP accidentally.
+CSRF_COOKIE_SECURE = True
+
+# to avoid transmitting the session cookie over HTTP accidentally.
+SESSION_COOKIE_SECURE = True
+```
+6. prevent Cross-site Scripting(XSS) attacks 
