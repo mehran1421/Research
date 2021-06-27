@@ -130,4 +130,20 @@ SECURE_HSTS_PRELOAD = True
 if there is an attack on the site, browsers restrict access to the site
 for the period we specify
 
-8. 
+8. Change the default admin path 
+```
+# urls.py
+urlpatterns = [
+    path('my-admin/', admin.site.urls),
+    ...
+]
+```
+9. use `Django-admin-honeypot` package for redirect attacker to fake admin page
+and ban ip address:
+```
+pip install django-admin-honeypot
+Add admin_honeypot to INSTALLED_APPS
+url(r'^admin/', include('admin_honeypot.urls')),
+url(r'^secret/', include(admin.site.urls)),
+```
+10. 
