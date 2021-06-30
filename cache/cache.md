@@ -23,3 +23,24 @@ Use from keys that have equal value in caching system for example
 "user":{"name":"mehran","family":"kamrani",...}
 ```  
 the above example, If the user wants to see the profile, show it to another user
+
+### cache in django
+*  use Memcached for caching system:
+The fastest type of cache in Django, a program for doing cache on dynamic website servers.
+this program use server ram for store information and if Fill the ram space, automatic Empties the space of Ram
+One drawback is that if the server crashes, all stored information will be lost
+this cache run In the form of deamon and Takes a certain amount of memory
+all data store in ram and There is no extra load on the database.
+we can store for keys **200 KB** and for value **1 MB**  
+for use Memcached in django first install tools with `pip install django-memcached`
+then write in settings.py files:
+```
+# settings.py
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcacheCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+```
+* 
