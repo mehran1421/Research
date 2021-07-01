@@ -43,4 +43,19 @@ CACHES = {
     }
 }
 ```
-* 
+* Database caching:
+create table inside the database. It is very useful if we have a fast database
+and Data is not lost 
+**the advantage of database cache** is that we no longer have to search for data in different tables with millions of pieces of information. 
+Instead, we put all that information in a table and we can also use indexing for more speed
+```
+# settings.py
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_cache_table',
+    }
+}
+# command line for create table in the LOCATION
+python manage.py createcachetable
+```
