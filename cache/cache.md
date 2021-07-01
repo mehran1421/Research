@@ -145,6 +145,7 @@ AOF persistence)
 
 ###### AOF stands for “Append Only File”. AOF keeps track of all the commands that are executed, and in a disastrous situation, it re-execute the commands to get the data back. This method takes more space as all the commands are executed again, and is not a very durable method of snapshotting.
 Memcached on the other hand does not support on disk persistence.
+
 11. Scalability: There are two techniques to horizontally scale your Redis database:
 (Adding shards in Redis Clusters, 
 Adding nodes to a Redis HA (master/replica) setup).
