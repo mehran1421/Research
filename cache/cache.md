@@ -59,3 +59,15 @@ CACHES = {
 # command line for create table in the LOCATION
 python manage.py createcachetable
 ```
+* Filesystem caching:
+cache data in a file. It has little security, It is better to put information that is not important in this.
+It has a low speed
+```
+# settings.py
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_cache', # 'c:/foo/bar' for widows
+    }
+}
+```
