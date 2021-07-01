@@ -132,9 +132,9 @@ Erlang           MatLab          R            Visual Basic
 9. Transactions: 
 Redis “transactions” are executed with the three below guarantees:
 
-1- Transactions are serialized and executed sequentially
-2- Either all of the commands, or none, are processed (atomic transactions)
-3- Optimistic locking offers an extra guarantee using check-and-set
+- Transactions are serialized and executed sequentially
+- Either all of the commands, or none, are processed (atomic transactions)
+- Optimistic locking offers an extra guarantee using check-and-set
 but Memcached, on the other hand, does not provide transaction management
 10. Snapshots/Persistence(ماندگاری/ ذخیره سازی در دیسک)
 Redis supports snapshots, and by default, Redis saves snapshots of the dataset on disk in a binary file called dump.rdb. You can manually call a snapshot, or customize the frequency or change threshold for running the operation.
@@ -208,4 +208,28 @@ Database   |    1000    |   10000   |   100000  |   1000000
 Redis      |    0(MB)   |   0(MB)   |    0(MB)  |   0(MB)
 ------------------------------------------------------------
 Memcached  |    2.2(MB) |   2.1(MB) |   2.2(MB) |   2.2(MB)
+```
+# Method for Cache:
+#### set():
+Using it, we can put values ​​into the cache
+```
+from django.core.cache import cache
+cache.set('my_key', 'hello, world!', 30)
+```
+set 'hello, world!' with 'my_key' key for 30 second into cache
+#### get():
+we can read and get value if there are in cache
+```
+cache.get('my_key')
+```
+after timeout that's mean 30 second :
+```
+cache.get('my_key')
+# None
+```
+#### delete():
+delete key with value in cache:
+```
+cache.delete('my_key')
+# True
 ```
