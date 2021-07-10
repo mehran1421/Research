@@ -101,16 +101,30 @@ Let's try to choose meaningful names for the variables, In this case, the code w
 Commenting
 ***********
 
-Header Comments
+**Header Comments**
     We must comment on the following at the top of each file:
         + programmer name
         + date program
         + file name
         + Names of other files that are associated with this file
-Functions Comments
+**Functions Comments**
     Each function has the task of doing something in the program:
         + What is the function supposed to do?
         + what is parameter
         + what is return
-Inline Comments
+**Inline Comments**
     descriptions the code in one line
+
+*************
+Reusable
+*************
+Reuse previously written code
+
+- **Advantages**
+    + Reduces coding time
+    + Reduce potential bugs in the program
+    + Reduction in costs
+
+- **Disadvantages**
+    + If written by another programmer, We must pay attention to the issue of security
+    + Dependence between codes increases
