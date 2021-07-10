@@ -96,3 +96,21 @@ write Dictionary for code and use good name for variable
 An important factor in software quality is the existence of a dictionary of functions, classes and variables
 
 Let's try to choose meaningful names for the variables, In this case, the code we wrote will be of better quality
+
+***********
+Commenting
+***********
+
+Header Comments
+    We must comment on the following at the top of each file:
+        + programmer name
+        + date program
+        + file name
+        + Names of other files that are associated with this file
+Functions Comments
+    Each function has the task of doing something in the program:
+        + What is the function supposed to do?
+        + what is parameter
+        + what is return
+Inline Comments
+    descriptions the code in one line
