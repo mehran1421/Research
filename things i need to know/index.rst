@@ -73,3 +73,15 @@ For example, maybe writen program and Refactor it Improves program performance.
 We must use the previous code as much as possible Because Months of effort are wasted.
 
 Per change code, we must Test program
+
+***************
+Work conscience
+***************
+A good programmer is someone who have **work conscience**. that's mean Whatever program he gets, he will do his best to improve the code.
+
+**************************
+Software engineering tools
+**************************
+Do not have a bias in the programming language
+
+for example, **face book**, the first development program with PHP but After, making a lot of money change, created his own programming language(HACK)
