@@ -1,5 +1,6 @@
-# Things I Need to Know
-
+======================
+**Things I Need to Know**
+======================
 
 *******************************
 dont use Technical Debt(بدهی فنی)
@@ -18,7 +19,8 @@ The advantage is that we can easily debug the program
 write standard code
 ********************
 there is a write Code rules in each program Language that Makes the written program more readable
-for example there is **PEP-8** in *python*:
+for example there is **PEP-8** in *python*
+
 - use 4 spaces per indentation level
 - separate top-level function and class definitions with two blank lines
 - method definitions inside a class are separated by a single blank line
@@ -55,3 +57,14 @@ Beautiful code
 ****************
 Code that is simply written, Different sections such as classes, functions, variables are well named
 So that if see another programmer it, Understands the task of the code easily
+
+*************
+Refactoring
+*************
+One of the main topics in software engineering references, there are two factor for **Refactoring**
+
+- How much time does it take us?
+- Cost spent
+for example, maybe writen program and Refactor it Improves program performance.
+we must use the previous code as much as possible Because Months of effort are wasted.
+per change code, we must Test program
