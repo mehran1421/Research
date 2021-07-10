@@ -3,7 +3,7 @@
 ======================
 
 .. contents:: Overview
-   :depth: 2
+   :depth: 3
 
 
 *******************************
@@ -89,3 +89,10 @@ Software engineering tools
 Do not have a bias in the programming language
 
 for example, **face book**, the first development program with PHP but After, making a lot of money change, created his own programming language(HACK)
+
+**********************************************************
+write Dictionary for code and use good name for variable
+**********************************************************
+An important factor in software quality is the existence of a dictionary of functions, classes and variables
+
+Let's try to choose meaningful names for the variables, In this case, the code we wrote will be of better quality
