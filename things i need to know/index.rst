@@ -12,13 +12,16 @@ The advice is to never sacrifice quality for speed because You will have to spen
 use Functional Programing
 **************************
 the way that The logic used in the program is considered as mathematical functions
+
 We assign specific responsibilities to each function
+
 The advantage is that we can easily debug the program
 
 ********************
 write standard code
 ********************
 there is a write Code rules in each program Language that Makes the written program more readable
+
 for example there is **PEP-8** in *python*
 
 - use 4 spaces per indentation level
@@ -65,6 +68,8 @@ One of the main topics in software engineering references, there are two factor 
 
 - How much time does it take us?
 - Cost spent
-for example, maybe writen program and Refactor it Improves program performance.
-we must use the previous code as much as possible Because Months of effort are wasted.
-per change code, we must Test program
+For example, maybe writen program and Refactor it Improves program performance.
+
+We must use the previous code as much as possible Because Months of effort are wasted.
+
+Per change code, we must Test program
