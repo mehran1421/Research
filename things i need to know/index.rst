@@ -22,7 +22,8 @@ for example there is **PEP-8** in *python*:
 - use 4 spaces per indentation level
 - separate top-level function and class definitions with two blank lines
 - method definitions inside a class are separated by a single blank line
-- use space after and before '=':
+- use space after and before '='.
+
 .. code:: python
 
     from .models import (
@@ -48,3 +49,9 @@ for example there is **PEP-8** in *python*:
                 product = Product.objects.filter(status=True, choice='p')
             serializer = ProductSerializer(product, context={'request': request}, many=True)
             return Response(serializer.data)
+
+****************
+Beautiful code
+****************
+Code that is simply written, Different sections such as classes, functions, variables are well named
+So that if see another programmer it, Understands the task of the code easily
