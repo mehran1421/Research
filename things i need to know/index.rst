@@ -128,3 +128,55 @@ Reuse previously written code
 - **Disadvantages**
     + If written by another programmer, We must pay attention to the issue of security
     + Dependence between codes increases
+
+************************
+Short code with function
+************************
+we must Divide code into smaller sections, Even the **devil's Advocate** can not object
+
+.. important::
+    Devils Advocate that means Someone who sees all the flaws in the code
+
+- dont use functions that are GOTO in nature
+- dont use **GLOBAl VARIABLE** in code Because can change it
+- better than Defining variable into functions
+- use Indentation in code for More readability for example
+
+.. code:: python
+
+    from django.http import HttpResponseForbidden
+    from admin_honeypot.models import LoginAttempt
+
+
+    class BlockedIpMiddleware(object):
+
+        def __init__(self, get_response):
+            self.get_response = get_response
+
+        def __call__(self, request):
+            for i in LoginAttempt.objects.all():
+                if request.META['REMOTE_ADDR'] in i.ip_address:
+                    return HttpResponseForbidden('<h1>Forbidden</h1>')
+            response = self.get_response(request)
+            return response
+
+- use Meaningful names for variable that dont need to commenting
+- if there is nested code in program, it is better to write functions for per nested cod
+- per functions just do one work and Avoid for super functions(Jack of all trades)
+- your code must Be limited parameter (Maximum 3)
+
+******************
+real data for test
+******************
+use real data for test for example dont use for username = ali1,ali2,...
+
+************
+type errors
+************
+- **software errors**
+    + return empty object or things
+    + dont manage exception in try-except
+
+**************
+manage errors
+**************
