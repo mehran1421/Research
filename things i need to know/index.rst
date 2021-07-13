@@ -177,6 +177,63 @@ type errors
     + return empty object or things
     + dont manage exception in try-except
 
-**************
-manage errors
-**************
+*******
+DRY
+*******
+DRY(Dont Repeat Yourself- دوباره کاری نکن) is one of the most basic rules of programming,
+
+The programmer must know which part of the program is duplicate and try that Reduce duplicate code by functions or class ,...
+
+if you use DRY, you can Refactoring code later
+
+In general, using dry can write code with more basic, simple programs and better quality
+
+**********************************
+Know what we are going to commit to
+**********************************
+there are two programmer when ask questions that "what are you doing?": programmer says
+- I'm working on a user-related class
+    + he know that what to commit
+    + he know that what are doing and know that What part of the program has its coding improved
+    + he can return back with Ctrl+z
+- In an effort to improve the service of users
+    + he dont know that when finish work and what to commit
+
+**************************
+Make our code transparent
+**************************
+- **write document project**
+    Commenting is essential for important parts of the software
+- **Testing**
+    tests help developer that Get acquainted with different parts of the project and if change it If you change part of the project, let us know what other parts of the project to change
+
+********************************************
+Introduction to Concurrency and Parallelism
+********************************************
+- Concurrency
+
+    two or more that They start and run simultaneously
+- Parallelism
+
+    if many task that Simultaneously handled by a multi-core processor
+
+.. note::
+    Concurrency Are related to the implementation of separate processes
+
+    but Parallelism Simultaneous implementation of related tasks
+
+*************
+SOLID
+*************
+
+- Single Responsibility Principle
+    A class must do a task and all functions into class must work on the same goal
+- Open/Close Principle
+    Never change the previous class and write the new code in a new class And we inherit from the previous class
+- Liskov Substitution Principle
+    کلاس فرزند باید بتواند تمام ویژگی های کلاس پدر را انجام دهد. اگر به طور مثال بگوییم که همه ی کار های والد را انجام میدهد به جز یک کار آن وقت این اصل را نقص کردیم
+- Interface Segregation Principle
+    حتما از اینترفیس ها استفاده کنیم: اینترفیس ها هما کلاس هایی هستند که تمام متدهای کلاس ما را تشریح میکنند و مشخص میکنند که برای اجرای این کلاس چه توابعی باید استفاده شود
+- Dependency Inversion Principle
+    کاهش وابستگی بین کلاس ها
+
