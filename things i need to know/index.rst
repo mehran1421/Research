@@ -134,7 +134,7 @@ Short code with function
 ************************
 we must Divide code into smaller sections, Even the **devil's Advocate** can not object
 
-.. important::
+.. note::
     Devils Advocate that means Someone who sees all the flaws in the code
 
 - dont use functions that are GOTO in nature
