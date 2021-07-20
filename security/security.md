@@ -166,3 +166,67 @@ REST_FRAMEWORK = {
 }
 ``` 
 without attacker can request Millions of times to database and Damage and disable database 
+
+can customize Throttling class:
+```python
+
+from pytimeparse.timeparse import timeparse
+from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
+
+
+class CustomThrottlingUser(UserRateThrottle):
+    scope = 'notice'
+    rate = '1/4s'
+
+    def parse_rate(self, rate):
+        """
+        Given the request rate string, return a two tuple of:
+        <allowed number of requests>, <period of time in seconds>
+        """
+
+        if rate is None:
+            return None, None
+        num, period = rate.split('/')
+        num_requests = int(num)
+        duration = timeparse(period)
+        return num_requests, duration
+
+```
+in the top code, we can choice in 
+```python
+duration ={
+'s': 1, 'm': 60, 'h': 3600, 'd': 86400
+}
+```
+for example if `rate = 1/4s` that means in 4 second just can 1 request to site
+
+15. check user agent for each request by Middleware:
+```python
+class BlockedIpBotUserAgentMiddleware(object):
+    """
+    check user agent and if it detects that it is a robot, add to bot_block_ip
+    """
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        # android, windows, ios
+        keywords = ['Mobile', 'Opera Mini', 'Android', 'iPhone', 'Mac', 'CPU', 'Windows', 'Phone', 'NT', 'Edge',
+                    'Chrome', 'CrOS', 'Macintosh', ]
+
+        user_agent = request.META['HTTP_USER_AGENT']
+
+        # check if dont have user agent, add to bot_block_ip
+        if [word in user_agent for word in keywords] is None:
+            bot_block_ip.append(request.META['REMOTE_ADDR'])
+
+        response = self.get_response(request)
+        return response
+
+```
+for example my user agent is:
+```
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+
+```
