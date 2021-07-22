@@ -2,12 +2,9 @@
 Scrapy
 =========
 
-.. image:: https://github.com/mehran1421/Research/scrapy/pic/scrap.png
-   :target: https://github.com/mehran1421/Research/scrapy/pic/scrap.png
+.. image:: https://github.com/mehran1421/Research/blob/master/scrapy/pic/scrap.png
+   :target: https://github.com/mehran1421/Research/blob/master/scrapy/pic/scrap.png
 
-.. contents::
-   :depth: 2
-   :local:
 
 ★ Research For Web Scraping By Scrapy Library ★
 
