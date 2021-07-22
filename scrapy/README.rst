@@ -2,7 +2,6 @@
 Scrapy
 =========
 
-**************************************************************************
 .. image:: https://github.com/mehran1421/Research/scrapy/pic/scrap.png
    :target: https://github.com/mehran1421/Research/scrapy/pic/scrap.png
 
@@ -13,7 +12,6 @@ Scrapy
 ★ Research For Web Scraping By Scrapy Library ★
 
     Build It ∘ Cross It ∘ Update It</span>
-*****************************************************************************
 
 .. contents:: Overview
    :depth: 3
