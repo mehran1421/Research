@@ -5,11 +5,9 @@
 .. image:: https://github.com/mehran1421/Research/blob/master/scrapy/pic/scrap.png
    :target: https://github.com/mehran1421/Research/blob/master/scrapy/pic/scrap.png
 
+★ Research For Web Scraping By Scrapy Library ★
 
-
-                    ★ Research For Web Scraping By Scrapy Library ★
-
-                        Build It ∘ Cross It ∘ Update It</span>
+        Build It ∘ Cross It ∘ Update It</span>
 
 .. contents:: Overview
    :depth: 3
