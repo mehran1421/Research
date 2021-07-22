@@ -279,4 +279,4 @@ using proxy to scrapy
 install `scrapy-proxy-pool` package::
 
     pip install scrapy_proxy_pool
-for more information, go to github 
+for more information, go to github
